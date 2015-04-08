@@ -18,6 +18,16 @@ The input file should be a CSV file in the format {start time},{end time}. For e
     9:53,10:03
     8:32,8:37
     
+### Sample run
+    
+Files visits.csv and one_visit.csv may also be used as input.
+
+Run 
+
+    python3 count_visitors.py -f visits.csv --sort_by_count
+    
+to get the visit counts from the data in visits.csv, sorted by count, descending.
+    
 ### Output
 
 The script will aggregate the input data and produce periods of time when the number of visits is unchanged and the number of visitors during each period.
