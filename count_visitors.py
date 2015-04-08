@@ -24,12 +24,12 @@ def exit_program(e):
 
 
 class Main:
-    def __init__(self, fname, open=None, close=None, sort_by_count=False):
+    def __init__(self, args):
         super().__init__()
-        self.fname = fname
-        self.open = open
-        self.close = close
-        self.sort_by_count = sort_by_count
+        self.fname = args.fname
+        self.open = args.open
+        self.close = args.close
+        self.sort_by_count = args.sort_by_count
         self.visits = []
         self.visitor_counts = {}
         self.period_counts = []
@@ -131,4 +131,4 @@ if __name__ == '__main__':
     parser.add_argument('--sort_by_count', action='store_true', help='Sort output by visitor count. If argument is not present, the output will be sorted by time')
     args = parser.parse_args()
 
-    Main(args.fname, args.open, args.close, args.sort_by_count).main()
+    Main(args).main()
