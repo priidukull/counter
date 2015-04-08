@@ -13,7 +13,7 @@ Visitor Counter is a single file Python script which reads data about each visit
     --sort_by_count  Sort output by visitor count. If argument is not present,
                      the output will be sorted by time
 
-The input file should be a CSV file in the format <start time>,<end time>. For example: 
+The input file should be a CSV file in the format {start time},{end time}. For example: 
     
     9:53,10:03
     8:32,8:37
@@ -34,9 +34,9 @@ By default, the script will calculate the number of visitors for the period betw
 
 Arguments open (-o) and close (-c) may be used to change that behavior. 
 
-If the value of open (-o) is a time earlier than the arrival of the first visitor, then the number of visitors will be calculated starting from the time set by the argument open (-o). Correspondingly, if the value of close (-c) is a time later than the departure of the last visitor, then the number of visitors will be calculated until the time set by the argument close (-c). Essentially, by using the argument open (-o) or close (-c) it is possible to add a period of 0 visitors either to the time before the arrival of the first visitor or after the departure of the last visitor. 
+If the value of open (-o) is a time earlier than the arrival of the first visitor, then the number of visitors will be calculated starting from the time set by the argument open (-o). Correspondingly, if the value of close (-c) is a time later than the departure of the last visitor, then the number of visitors will be calculated until the time set by the argument close (-c). 
 
-The purpose of the open and close arguments is to enable the output to also show that there was a period of time when the place had been opened to the public and no one had come yet or everyone had left already.
+Essentially, by using the argument open (-o) or close (-c) it is possible to add a period of 0 visitors either to the time before the arrival of the first visitor or after the departure of the last visitor. The purpose of the open and close arguments is to enable the output to also show that there was a period of time when the place had been opened to the public and no one had come yet or everyone had left already.
 
 If value of open (-o) is a time later than the first visitor came or the value of close (-c) is a time before the last visitor left, then the argument will be ignored by the program.
     
@@ -44,7 +44,7 @@ If value of open (-o) is a time later than the first visitor came or the value o
 
 Argument fname must point to an existing file. Otherwise the program will exist.
 
-Arguments open and close must be legal times in the format {H:MM}. Otherwise the program will exit.
+The value open or close must be a legal time expressed in the {H:MM}. Otherwise the program will exit.
 
 Any line in the CSV file that could not be read by the parser will be ignored. Info about each ignored line will be printed at the end of the output. An example:
 
