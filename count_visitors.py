@@ -126,8 +126,8 @@ class Main:
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', dest='fname', required=True, help='Path to the input file')
-    parser.add_argument('-o', dest='open', help='The time when the doors are opened. Defaults to None')
-    parser.add_argument('-c', dest='close', help='The time when the doors are closed. Defaults to None')
+    parser.add_argument('-o', dest='open', help='The time when the doors are opened. Defaults to None. Format <H:MM>, for example 8:34')
+    parser.add_argument('-c', dest='close', help='The time when the doors are closed. Defaults to None. Format <H:MM>, for example 8:34')
     parser.add_argument('--sort_by_count', action='store_true', help='Sort output by visitor count. If argument is not present, the output will be sorted by time')
     args = parser.parse_args()
 
